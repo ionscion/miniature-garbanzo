@@ -1,15 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css;">
-    <link rel="stylesheet" href="./assets/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Concert Finder</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-
+    <div class="container is-fluid">
+      <div class="notification is-primary">
+        <section class="section">
+          <div class="container">
+            <h1 class="title">Concert Connection</h1>
+            <p class="subtitle">
+              Find your next <strong>live music</strong> experience!
+            </p>
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Input your City and State"
+              />
+            </div>
+            <div class="control">
+              <button class="button is-small is-dark">Submit</button>
+            </div>
+          </div>
+        </section>
+      </div>
+      <section>
+        <div class="tile is-ancestor">
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">Artist 1</p>
+              <p class="subtitle">Location, Date and Time</p>
+              <div class="control">
+                <button class="button is-primary">Select</button>
+              </div>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">Artist 2</p>
+              <p class="subtitle">Location, Date and Time</p>
+              <div class="control">
+                <button class="button is-primary">Select</button>
+              </div>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">Artist 3</p>
+              <p class="subtitle">Location, Date and Time</p>
+              <div class="control">
+                <button class="button is-primary">Select</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="tile is-ancestor">
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">Artist 4</p>
+              <p class="subtitle">Location, Date and Time</p>
+              <div class="control">
+                <button class="button is-primary">Select</button>
+              </div>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">Artist 5</p>
+              <p class="subtitle">Location, Date and Time</p>
+              <div class="control">
+                <button class="button is-primary">Select</button>
+              </div>
+            </article>
+          </div>
+          <div class="tile is-parent">
+            <article class="tile is-child box">
+              <p class="title">Artist 6</p>
+              <p class="subtitle">Location, Date and Time</p>
+              <div class="control">
+                <button class="button is-primary">Select</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <div class="tile is-parent content is-normal">
+        <article class="tile is-child box">
+          <h3>Top 3 Saved Searches:</h3>
+          <ul>
+            <li>Artist 1, Location, Date and Time</li>
+            <li>Artist 2, Location, Date and Time</li>
+            <li>Artist 3, Location, Date and Time</li>
+          </ul>
+        </article>
+      </div>
+    </div>
     <script src="./assets/script.js"></script>
     <script src="./assets/script2.js"></script>
   </body>
