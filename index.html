@@ -19,17 +19,87 @@
             <p class="subtitle">
               Find your next <strong>live music</strong> experience!
             </p>
-            <div class="control">
-              <input
-                class="input"
-                type="text"
-                placeholder="Input your City and State"
-              />
+            <div class="columns is-multiline is-centered">
+              <div class="field column is-half is-margin-small">
+                <label class="label">City Search</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    id="city-input"
+                    type="text"
+                    placeholder="Enter city here"
+                  />
+                </div>
+              </div>
+              <div class="select">
+                <select id="state-input">
+                    <option selected>Pick state below</option>
+                    <option value="Alabama">AL</option>
+                    <option value="Alaska">AK</option>
+                    <option value="Arkansas">AR</option>
+                    <option value="Arizona">AZ</option>
+                    <option value="California">CA</option>
+                    <option value="Colorado">CO</option>
+                    <option value="Connecticut">CT</option>
+                    <option value="Delaware">DE</option>
+                    <option value="Florida">FL</option>
+                    <option value="Georgia">GA</option>
+                    <option value="Hawaii">HI</option>
+                    <option value="Iowa">IA</option>
+                    <option value="Idaho">ID</option>
+                    <option value="Illinois">IL</option>
+                    <option value="Indiana">IN</option>
+                    <option value="Kentucky">KY</option>
+                    <option value="Kansas">KS</option>
+                    <option value="Louisiana">LA</option>
+                    <option value="Massachusetts">MA</option>
+                    <option value="Maryland">MD</option>
+                    <option value="Maine">ME</option>
+                    <option value="Michigan">MI</option>
+                    <option value="Minnesota">MN</option>
+                    <option value="Missouri">MO</option>
+                    <option value="Mississippi">MS</option>
+                    <option value="Montana">MT</option>
+                    <option value="North Carolina">NC</option>
+                    <option value="North Dakota">ND</option>
+                    <option value="Nebraska">NE</option>
+                    <option value="New Hampshire">NH</option>
+                    <option value="New Jersey">NJ</option>
+                    <option value="New Mexico">NM</option>
+                    <option value="New York">NY</option>
+                    <option value="Nevada">NV</option>
+                    <option value="Ohio">OH</option>
+                    <option value="Oklahoma">OK</option>
+                    <option value="Oregon">OR</option>
+                    <option value="Pennsylvania">PA</option>
+                    <option value="Rhode Island">RI</option>
+                    <option value="South Carolina">SC</option>
+                    <option value="South Dakota">SD</option>
+                    <option value="Tennessee">TN</option>
+                    <option value="Texas">TX</option>
+                    <option value="Utah">UT</option>
+                    <option value="Virginia">VA</option>
+                    <option value="Vermont">VT</option>
+                    <option value="Washington">WA</option>
+                    <option value="Wisconsin">WI</option>
+                    <option value="West Virginia">WV</option>
+                    <option value="Wyoming">WY</option>
+                </select>
+              </div>
+              <div class="field is-grouped column is-half">
+                <div class="control">
+                  <button class="button is-link" id="search-btn">Submit</button>
+                </div>
+                <div class="control">
+                  <button class="button is-link is-light">Cancel</button>
+                </div>
+                <div class="control">
+                  <button class="button is-link" id="ip-search-btn">
+                    Search by current location
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="control">
-              <button class="button is-small is-dark">Submit</button>
-            </div>
-          </div>
         </section>
       </div>
       <section>
@@ -38,6 +108,7 @@
             <article class="tile is-child box">
               <p class="title">Artist 1</p>
               <p class="subtitle">Location, Date and Time</p>
+              <div id="column-1"></div>
               <div class="control">
                 <button class="button is-primary">Select</button>
               </div>
@@ -69,6 +140,7 @@
             <article class="tile is-child box">
               <p class="title">Artist 4</p>
               <p class="subtitle">Location, Date and Time</p>
+              
               <div class="control">
                 <button class="button is-primary">Select</button>
               </div>
