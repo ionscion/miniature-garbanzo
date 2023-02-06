@@ -28,14 +28,13 @@
                     id="city-input"
                     type="text"
                     placeholder="Enter city here"
+                    required
                   />
                 </div>
               </div>
-              
-              <div class="select">
-                
-                <select id="state-input">
-                    <option selected>Pick state below</option>
+              <div class="select control">
+                <select class="selection" id="state-input" required>
+                    <option selected value="Pick state below">Select state</option>
                     <option value="Alabama">AL</option>
                     <option value="Alaska">AK</option>
                     <option value="Arkansas">AR</option>
@@ -89,14 +88,17 @@
                 </select>
               </div>
               <div class="field is-grouped column is-half">
-                <div class="control">
-                  <button class="button is-link clr-btn" id="search-btn">Submit</button>
-                </div>
                
                 <div class="control">
-                  <button class="button is-link clr-btn" id="ip-search-btn">
-                    Search By Current Location
-                  </button>
+                  <button class="button is-link is-light" id="clear-btn">Clear Search</button>
+                </div>
+                <div class="control">
+                  <button class="button is-link" id="ip-search-btn">
+                    Search by current location
+                  </button>                  
+                </div>
+                <div class="control">
+                  <button class="button is-link" id="search-btn">Submit</button>
                 </div>
               </div>
             </div>
