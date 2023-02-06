@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Concert Finder</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/guitar-favicon.png">
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
@@ -14,8 +15,8 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <div class="container is-fluid">
-      <div class="notification is-primary">
+    <div class="bkg-clr">
+      <div class="is-primary">
         <section class="section crowd-pic">
           <div class="container">
             <h1 class="center head-size">Concert Connection</h1>
@@ -110,34 +111,36 @@
             </div>
         </section>
       </div>
-      
+      <div class="container mt-3">
       <section>
         <div class="tile is-ancestor">
           <div class="tile is-parent">
-            <article class="tile is-child box">
-              <p class="title">Artist 1</p>
-              <p class="subtitle">Location, Date and Time</p>
-              <div id="column-1"></div>
+            <article class="tile is-child box card-clr">
+              <p class="title" id="column-0">Artist</p>
+              <p class="subtitle" id="venue-0">Location, Date and Time</p>
+              <p class="mg-top" id="time-0"></p>
               <div class="control">
-                <button class="button is-primary">Select</button>
+                <button class="button is-primary artist-btn">Select</button>
               </div>
             </article>
           </div>
           <div class="tile is-parent">
-            <article class="tile is-child box">
-              <p class="title">Artist 2</p>
-              <p class="subtitle">Location, Date and Time</p>
+            <article class="tile is-child box card-clr">
+              <p class="title" id="column-1">Artist</p>
+              <p class="subtitle" id="venue-1">Location, Date and Time</p>
+              <p class="mg-top" id="time-1"></p>
               <div class="control">
-                <button class="button is-primary">Select</button>
+                <button class="button is-primary artist-btn">Select</button>
               </div>
             </article>
           </div>
           <div class="tile is-parent">
-            <article class="tile is-child box">
-              <p class="title">Artist 3</p>
-              <p class="subtitle">Location, Date and Time</p>
+            <article class="tile is-child box card-clr">
+              <p class="title" id="column-2">Artist</p>
+              <p class="subtitle" id="venue-2">Location, Date and Time</p>
+              <p class="mg-top" id="time-2"></p>
               <div class="control">
-                <button class="button is-primary">Select</button>
+                <button class="button is-primary artist-btn">Select</button>
               </div>
             </article>
           </div>
@@ -146,38 +149,41 @@
       <section>
         <div class="tile is-ancestor">
           <div class="tile is-parent">
-            <article class="tile is-child box">
-              <p class="title">Artist 4</p>
-              <p class="subtitle">Location, Date and Time</p>
+            <article class="tile is-child box card-clr">
+              <p class="title" id="column-3">Artist</p>
+              <p class="subtitle" id="venue-3">Location, Date and Time</p>
+              <p class="mg-top" id="time-3"></p>
               
               <div class="control">
-                <button class="button is-primary">Select</button>
+                <button class="button is-primary artist-btn">Select</button>
               </div>
             </article>
           </div>
           <div class="tile is-parent">
-            <article class="tile is-child box">
-              <p class="title">Artist 5</p>
-              <p class="subtitle">Location, Date and Time</p>
+            <article class="tile is-child box card-clr">
+              <p class="title" id="column-4">Artist</p>
+              <p class="subtitle" id="venue-4">Location, Date and Time</p>
+              <p class="mg-top" id="time-4"></p>
               <div class="control">
-                <button class="button is-primary">Select</button>
+                <button class="button is-primary artist-btn">Select</button>
               </div>
             </article>
           </div>
           <div class="tile is-parent">
-            <article class="tile is-child box">
-              <p class="title">Artist 6</p>
-              <p class="subtitle">Location, Date and Time</p>
+            <article class="tile is-child box card-clr">
+              <p class="title" id="column-5">Artist</p>
+              <p class="subtitle" id="venue-5">Location, Date and Time</p>
+              <p class="mg-top" id="time-5"></p>
               <div class="control">
-                <button class="button is-primary">Select</button>
+                <button class="button is-primary artist-btn">Select</button>
               </div>
             </article>
           </div>
         </div>
       </section>
-      <div class="tile is-parent content is-normal">
-        <article class="tile is-child box">
-          <h3>Top 3 Saved Searches:</h3>
+      <div class="tile is-parent content is-normal fix-width">
+        <article class="tile is-child box card-clr">
+          <h3>My Saved Concerts:</h3>
           <ul>
             <li>Artist 1, Location, Date and Time</li>
             <li>Artist 2, Location, Date and Time</li>
@@ -185,7 +191,14 @@
           </ul>
         </article>
       </div>
+      </div>
     </div>
+
+    <script
+    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"
+  ></script>
     <script src="./assets/script.js"></script>
     <script src="./assets/script2.js"></script>
   </body>

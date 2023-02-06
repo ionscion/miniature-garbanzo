@@ -1,3 +1,12 @@
+.bkg-clr {
+    background: linear-gradient(to top, rgb(27, 36, 211), black);
+}
+
+.card-clr {
+
+    background: linear-gradient(to top, white, #00d1b2);
+}
+
 .select {
     margin-top: 44px;
 }
@@ -30,9 +39,28 @@ font-family: 'Sonsie One', sans-serif, cursive;
     background-color: #00d1b2 !important;
 }
 
+.artist-btn {
+    background-color: rgb(31, 31, 76) !important;
+}
+
 .center-btns {
     display: flex;
     justify-content: center;
     margin-left: 100px;
 }
+
+.mg-top {
+    margin-top: -18px; ;
+}
+
+.fix-width {
+    margin-left: -13px;
+    margin-right: -13px ;
+}
+
+
+
+
+
+
 
