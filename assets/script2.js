@@ -61,11 +61,15 @@ function getConcertApi() {
     .then(function (data) {
       console.log(data);
 
-      for (let i = 0; i < 10; i++) {
-        let columnData = document.getElementById("column-1");
-        let performer = document.createElement("button");
-        performer.textContent = data.events[i].short_title;
-        columnData.appendChild(performer);
+      for (let i = 0; i < 6; i++) {
+        let performer = document.getElementById("column-"+[i])
+        let showVenue = document.getElementById("venue-"+[i])
+        let showDate = document.getElementById("time-"+[i])
+        
+        showDate.innerText = dayjs(data.events[i].datetime_local).format("M/D/YYYY h:mmA")
+        performer.innerText = data.events[i].short_title;
+        showVenue.innerText = data.events[i].venue.name;
+        
       }
     });
   latitude = [];
