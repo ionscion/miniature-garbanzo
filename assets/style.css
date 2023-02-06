@@ -1,1 +1,29 @@
-/* This is a test push. */
+.select {
+    margin-top: 44px;
+}
+
+.crowd-pic {
+    background-image: url("./images/concert-crowd2.jpg");
+
+   background-size: cover;
+   background-color: white !important;
+
+
+}
+.notification.is-primary {
+    background-color: white;
+}
+
+.center {
+    text-align: center;
+    color: black;
+}
+
+.head-size {
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.clr-btn {
+    background-color: #00d1b2 !important;
+}
