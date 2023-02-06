@@ -8,6 +8,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Sonsie+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
@@ -27,14 +30,14 @@
                     class="input"
                     id="city-input"
                     type="text"
-                    placeholder="Enter city here"
+                    placeholder="Enter City and Select State"
                     required
                   />
                 </div>
               </div>
               <div class="select control">
                 <select class="selection" id="state-input" required>
-                    <option selected value="Pick state below">Select state</option>
+                    <option selected value="Pick state below">State</option>
                     <option value="Alabama">AL</option>
                     <option value="Alaska">AK</option>
                     <option value="Arkansas">AR</option>
@@ -87,18 +90,21 @@
                     <option value="Wyoming">WY</option>
                 </select>
               </div>
+              </div>
+              <div class="center-btns">
               <div class="field is-grouped column is-half">
-               
                 <div class="control">
-                  <button class="button is-link is-light" id="clear-btn">Clear Search</button>
+                  <button class="button is-link clr-btn" id="search-btn">Submit</button>
                 </div>
+                
                 <div class="control">
-                  <button class="button is-link" id="ip-search-btn">
-                    Search by current location
+                  <button class="button is-link clr-btn" id="ip-search-btn">
+                    Search By Current Location
                   </button>                  
                 </div>
+                
                 <div class="control">
-                  <button class="button is-link" id="search-btn">Submit</button>
+                  <button class="button is-link is-light" id="clear-btn">Clear Search</button>
                 </div>
               </div>
             </div>
