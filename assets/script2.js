@@ -120,7 +120,7 @@ function saveConcert(artist, venueAddress, venuePostalCode) {
 
 function renderSearch() {
   let savedSearches = JSON.parse(localStorage.getItem("concert-search"));
-  let uniqueData = [...new Set(savedSearches.map((x) => x.toUpperCase()))];
+  let uniqueData = [...new Set(savedSearches)];
   for (let index = 0; index < uniqueData.length; index++) {
     let concertInfo = document.createElement("li");
     concertInfo.textContent = uniqueData[index];
@@ -134,4 +134,4 @@ init();
 clearButton.addEventListener("click", clearSearch);
 searchButton.addEventListener("click", getCityApi);
 ipSearchButton.addEventListener("click", getCurrentIpApi);
-selectBtn.addEventListener("click", renderSearch);
+// selectBtn.addEventListener("click", renderSearch);
