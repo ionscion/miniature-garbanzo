@@ -6,7 +6,7 @@ let columnData = document.getElementById("column-1");
 let clearButton = document.getElementById("clear-btn");
 let cityInputElem = document.getElementById("city-input");
 let selectedStateElem = document.getElementById("state-input");
-let selectBtn = document.querySelector("#btn-");
+let saveBtn = document.querySelector(".save-btn");
 let savedList = document.getElementById("saved-list");
 
 let weatherapi = "326e6d35f7ebe093972477e3b80624aa";
@@ -69,14 +69,14 @@ function getConcertApi() {
         let showDate = document.getElementById("time-" + [i]);
 
         showDate.innerText = dayjs(data.events[i].datetime_local).format(
-          "dddd MMM, YYYY h:mmA"
+          "dddd, MMM D, YYYY h:mmA"
         );
         performer.innerText = data.events[i].short_title;
         showVenue.innerText = data.events[i].venue.name;
         let artist = data.events[i].short_title;
         let venueAddress = data.events[i].venue.address;
         let venuePostalCode = data.events[i].venue.postal_code;
-        saveConcert(artist, venueAddress, venuePostalCode);
+        // saveConcert(artist, venueAddress, venuePostalCode);
       }
     });
 
@@ -118,6 +118,21 @@ function saveConcert(artist, venueAddress, venuePostalCode) {
   localStorage.setItem("concert-search", JSON.stringify(concertSearch));
 }
 
+function saveConcert2() {
+  const parent = this.parentElement.parentElement;
+  const title = parent.querySelector(".title").textContent;
+  const subtitle = parent.querySelector(".subtitle").textContent;
+  const time = parent.querySelector(".mg-top").textContent;
+
+  console.log("title:", title);
+  console.log("subtitle:", subtitle);
+  console.log("time:", time);
+  let concertSearch = JSON.parse(localStorage.getItem("concert-search")) || [];
+  concertSearch.push(`${title}, ${subtitle}, ${time}`);
+  localStorage.setItem("concert-search", JSON.stringify(concertSearch));
+}
+
+
 function renderSearch() {
   let savedSearches = JSON.parse(localStorage.getItem("concert-search"));
   let uniqueData = [...new Set(savedSearches)];
@@ -134,4 +149,4 @@ init();
 clearButton.addEventListener("click", clearSearch);
 searchButton.addEventListener("click", getCityApi);
 ipSearchButton.addEventListener("click", getCurrentIpApi);
-// selectBtn.addEventListener("click", renderSearch);
+saveBtn.addEventListener("click", saveConcert2);
