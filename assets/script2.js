@@ -66,7 +66,7 @@ function getConcertApi() {
         let showVenue = document.getElementById("venue-"+[i])
         let showDate = document.getElementById("time-"+[i])
         
-        showDate.innerText = dayjs(data.events[i].datetime_local).format("M/D/YYYY h:mmA")
+        showDate.innerText = dayjs(data.events[i].datetime_local).format("dddd MMM, YYYY h:mmA")
         performer.innerText = data.events[i].short_title;
         showVenue.innerText = data.events[i].venue.name;
         
