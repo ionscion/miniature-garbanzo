@@ -6,6 +6,8 @@ let columnData = document.getElementById("column-1");
 let clearButton = document.getElementById("clear-btn");
 let cityInputElem = document.getElementById("city-input");
 let selectedStateElem = document.getElementById("state-input");
+let selectBtn = document.querySelector("#btn-");
+let savedList = document.getElementById("saved-list");
 
 let weatherapi = "326e6d35f7ebe093972477e3b80624aa";
 let seatgeekapi = "MzE3NDAyMDR8MTY3NTM1NDU3My4xNzIzODQ";
@@ -62,16 +64,22 @@ function getConcertApi() {
       console.log(data);
 
       for (let i = 0; i < 6; i++) {
-        let performer = document.getElementById("column-"+[i])
-        let showVenue = document.getElementById("venue-"+[i])
-        let showDate = document.getElementById("time-"+[i])
-        
-        showDate.innerText = dayjs(data.events[i].datetime_local).format("dddd MMM, YYYY h:mmA")
+        let performer = document.getElementById("column-" + [i]);
+        let showVenue = document.getElementById("venue-" + [i]);
+        let showDate = document.getElementById("time-" + [i]);
+
+        showDate.innerText = dayjs(data.events[i].datetime_local).format(
+          "dddd MMM, YYYY h:mmA"
+        );
         performer.innerText = data.events[i].short_title;
         showVenue.innerText = data.events[i].venue.name;
-        
+        let artist = data.events[i].short_title;
+        let venueAddress = data.events[i].venue.address;
+        let venuePostalCode = data.events[i].venue.postal_code;
+        saveConcert(artist, venueAddress, venuePostalCode);
       }
     });
+
   latitude = [];
   longitude = [];
 }
@@ -104,6 +112,26 @@ function clearSearch() {
   console.log("clear search ran");
 }
 
+function saveConcert(artist, venueAddress, venuePostalCode) {
+  let concertSearch = JSON.parse(localStorage.getItem("concert-search")) || [];
+  concertSearch.push(`${artist}, ${venueAddress}, ${venuePostalCode}`);
+  localStorage.setItem("concert-search", JSON.stringify(concertSearch));
+}
+
+function renderSearch() {
+  let savedSearches = JSON.parse(localStorage.getItem("concert-search"));
+  let uniqueData = [...new Set(savedSearches.map((x) => x.toUpperCase()))];
+  for (let index = 0; index < uniqueData.length; index++) {
+    let concertInfo = document.createElement("li");
+    concertInfo.textContent = uniqueData[index];
+    savedList.appendChild(concertInfo);
+  }
+}
+function init() {
+  renderSearch();
+}
+init();
 clearButton.addEventListener("click", clearSearch);
 searchButton.addEventListener("click", getCityApi);
 ipSearchButton.addEventListener("click", getCurrentIpApi);
+selectBtn.addEventListener("click", renderSearch);
