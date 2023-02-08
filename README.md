@@ -88,7 +88,7 @@ https://github.com/ionscion/miniature-garbanzo
 | Name | GitHub |
 |------|--------|
 | John Wilday | [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/999888Z)
-| Nate Margolis | [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/999888Z)
+| Nate Margolis | [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/Nmargolis00)
 | Jancy Polzkill | [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/jancypp)
 | Ben Sboto | [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">](https://github.com/ionscion)
 

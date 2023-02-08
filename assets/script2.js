@@ -8,7 +8,7 @@ let cityInputElem = document.getElementById("city-input");
 let selectedStateElem = document.getElementById("state-input");
 // let saveBtn = document.querySelector(".save-btn");
 let savedList = document.getElementById("saved-list");
-let deleteBtn = document.querySelector(".dlt")
+let deleteBtn = document.querySelector(".dlt");
 let saveButton = $(".save-btn");
 
 let weatherapi = "326e6d35f7ebe093972477e3b80624aa";
@@ -53,7 +53,6 @@ function getCityApi(evt) {
   clearSearch();
 }
 
-//temporary to be removed when Nate add his functions
 function getConcertApi() {
   clearPage();
   let seatGeekUrl = `https://api.seatgeek.com/2/events?lat=${latitude}&lon=${longitude}&range=5mi&taxonomies.name=concert&client_id=${seatgeekapi}`;
@@ -66,24 +65,30 @@ function getConcertApi() {
       for (let i = 0; i < 6; i++) {
         let performer = document.getElementById("column-" + [i]);
         let showVenue = document.getElementById("venue-" + [i]);
-        let showAddress = document.getElementById("address-" + [i])
+        let showAddress = document.getElementById("address-" + [i]);
         let showDate = document.getElementById("time-" + [i]);
-        
+
         showDate.innerText = dayjs(data.events[i].datetime_local).format(
           "dddd, MMM D, YYYY h:mmA"
         );
         performer.innerText = data.events[i].short_title;
         showVenue.innerText = data.events[i].venue.name;
-        showAddress.innerHTML = '<i class="fa-solid fa-location-dot" aria-hidden="true"> </i> ';
-        showAddress.append(data.events[i].venue.address + " " + data.events[i].venue.postal_code);
-        document.getElementById("address-" + [i]).addEventListener("click", function googleMap(){
-          let  google = (`https://www.google.com/maps/dir/?api=1&destination=${encodeURI(data.events[i].venue.address)},${encodeURI(data.events[i].venue.city)},${data.events[i].venue.state},${data.events[i].venue.postal_code}&travelmode=driving`)
-          window.open(google, '_blank');
-          
-        })
+        showAddress.innerHTML =
+          '<i class="fa-solid fa-location-dot" aria-hidden="true"> </i> ';
+        showAddress.append(
+          data.events[i].venue.address + " " + data.events[i].venue.postal_code
+        );
+        document
+          .getElementById("address-" + [i])
+          .addEventListener("click", function googleMap() {
+            let google = `https://www.google.com/maps/dir/?api=1&destination=${encodeURI(
+              data.events[i].venue.address
+            )},${encodeURI(data.events[i].venue.city)},${
+              data.events[i].venue.state
+            },${data.events[i].venue.postal_code}&travelmode=driving`;
+            window.open(google, "_blank");
+          });
       }
-      
-      
     });
 
   latitude = [];
@@ -128,25 +133,27 @@ function clearSearch() {
 //   const title = parent.querySelector(".title").textContent;
 //   const subtitle = parent.querySelector(".subtitle").textContent;
 //   const time = parent.querySelector(".mg-top").textContent;
-  
+
 //   let concertSearch = JSON.parse(localStorage.getItem("concert-search")) || [];
 //   concertSearch.push(`${title}, ${subtitle}, ${time}`);
 //   localStorage.setItem("concert-search", JSON.stringify(concertSearch));
 // }
 
-$(function() {
-  saveButton.on("click", function(){
+$(function () {
+  saveButton.on("click", function () {
     let clickedSaveButton = $(this);
     let title = clickedSaveButton.closest(".control").siblings(".title").text();
-    let subtitle = clickedSaveButton.closest(".control").siblings(".subtitle").text();
+    let subtitle = clickedSaveButton
+      .closest(".control")
+      .siblings(".subtitle")
+      .text();
     let time = clickedSaveButton.closest(".control").siblings(".time").text();
-    let concertSearch = JSON.parse(localStorage.getItem("concert-search")) || [];
+    let concertSearch =
+      JSON.parse(localStorage.getItem("concert-search")) || [];
     concertSearch.push(`${title}, ${subtitle}, ${time}`);
     localStorage.setItem("concert-search", JSON.stringify(concertSearch));
   });
-}
-
-);
+});
 
 function renderSearch() {
   let savedSearches = JSON.parse(localStorage.getItem("concert-search"));
@@ -166,13 +173,10 @@ function init() {
   renderSearch();
 }
 
-
-
 init();
 clearButton.addEventListener("click", clearSearch);
 searchButton.addEventListener("click", getCityApi);
 ipSearchButton.addEventListener("click", getCurrentIpApi);
-deleteBtn.addEventListener("click", deleteConcerts)
-
+deleteBtn.addEventListener("click", deleteConcerts);
 
 // saveBtn.addEventListener("click", saveConcert2);
