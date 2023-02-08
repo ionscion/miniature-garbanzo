@@ -13,7 +13,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link
+      href="{% static 'fontawesomefree/css/all.min.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -36,7 +40,7 @@
                 <label class="label">City Search</label>
                 <div class="control">
                   <input
-                    class="input"
+                    class="input is-rounded"
                     id="city-input"
                     type="text"
                     placeholder="Enter City and Select State"
@@ -104,19 +108,19 @@
               <div class="field is-grouped column is-half">
                 <div class="control">
                   <button class="button is-link clr-btn" id="search-btn">
-                    Submit
+                    <i class="mr-2 fa-solid fa-magnifying-glass"></i>Search
                   </button>
                 </div>
 
                 <div class="control">
                   <button class="button is-link clr-btn" id="ip-search-btn">
-                    Search By Current Location
+                    <i class="mr-2 fa-solid fa-magnifying-glass-location"></i>Search By Current Location
                   </button>
                 </div>
 
                 <div class="control">
                   <button class="button is-link is-light" id="clear-btn">
-                    Clear Search
+                    <i class="mr-2 fa-solid fa-explosion"></i>Clear Search
                   </button>
                 </div>
               </div>
@@ -130,14 +134,18 @@
             <div class="tile is-parent">
               <article class="tile is-child box card-clr">
                 <p class="title" id="column-0">Artist</p>
-                <p class="subtitle" id="venue-0">Location, Date and Time</p>
-                <p class="mg-top time" id="time-0"></p>
+                <p class="subtitle" id="venue-0">
+                  Venue, Address, Date and Time
+                </p>
+                <button class="direct-link mg-top" id="address-0">
+                </button>
+                <p class="time" id="time-0"></p>
                 <div class="control">
                   <button
                     id="btn-1"
                     class="save-btn button is-primary artist-btn"
                   >
-                    Select
+                    Save<i class="ml-2 fa-solid fa-cloud-arrow-down"></i>
                   </button>
                 </div>
               </article>
@@ -145,14 +153,20 @@
             <div class="tile is-parent">
               <article class="tile is-child box card-clr">
                 <p class="title" id="column-1">Artist</p>
-                <p class="subtitle" id="venue-1">Location, Date and Time</p>
-                <p class="mg-top time" id="time-1"></p>
+                <p class="subtitle" id="venue-1">
+                  Venue, Address, Date and Time
+                </p>
+                <button class="direct-link mg-top" id="address-1">
+                  
+                </button>
+                <p class="time" id="time-1"></p>
+
                 <div class="control">
                   <button
                     id="btn-2"
                     class="save-btn button is-primary artist-btn"
                   >
-                    Select
+                    Save<i class="ml-2 fa-solid fa-cloud-arrow-down"></i>
                   </button>
                 </div>
               </article>
@@ -160,14 +174,19 @@
             <div class="tile is-parent">
               <article class="tile is-child box card-clr">
                 <p class="title" id="column-2">Artist</p>
-                <p class="subtitle" id="venue-2">Location, Date and Time</p>
-                <p class="mg-top time" id="time-2"></p>
+                <p class="subtitle" id="venue-2">
+                  Venue, Address, Date and Time
+                </p>
+                <button class="direct-link mg-top" id="address-2">
+                  
+                </button>
+                <p class="time" id="time-2"></p>
                 <div class="control">
                   <button
                     id="btn-3"
                     class="save-btn button is-primary artist-btn"
                   >
-                    Select
+                    Save<i class="ml-2 fa-solid fa-cloud-arrow-down"></i>
                   </button>
                 </div>
               </article>
@@ -179,15 +198,20 @@
             <div class="tile is-parent">
               <article class="tile is-child box card-clr">
                 <p class="title" id="column-3">Artist</p>
-                <p class="subtitle" id="venue-3">Location, Date and Time</p>
-                <p class="mg-top time" id="time-3"></p>
+                <p class="subtitle" id="venue-3">
+                  Venue, Address, Date and Time
+                </p>
+                <button class="direct-link mg-top" id="address-3">
+                  
+                </button>
+                <p class="time" id="time-3"></p>
 
                 <div class="control">
                   <button
                     id="btn-4"
                     class="save-btn button is-primary artist-btn"
                   >
-                    Select
+                    Save<i class="ml-2 fa-solid fa-cloud-arrow-down"></i>
                   </button>
                 </div>
               </article>
@@ -195,14 +219,19 @@
             <div class="tile is-parent">
               <article class="tile is-child box card-clr">
                 <p class="title" id="column-4">Artist</p>
-                <p class="subtitle" id="venue-4">Location, Date and Time</p>
-                <p class="mg-top time" id="time-4"></p>
+                <p class="subtitle" id="venue-4">
+                  Venue, Address, Date and Time
+                </p>
+                <button class="direct-link mg-top" id="address-4">
+                  
+                </button>
+                <p class="time" id="time-4"></p>
                 <div class="control">
                   <button
                     id="btn-5"
                     class="save-btn button is-primary artist-btn"
                   >
-                    Select
+                    Save<i class="ml-2 fa-solid fa-cloud-arrow-down"></i>
                   </button>
                 </div>
               </article>
@@ -210,14 +239,19 @@
             <div class="tile is-parent">
               <article class="tile is-child box card-clr">
                 <p class="title" id="column-5">Artist</p>
-                <p class="subtitle" id="venue-5">Location, Date and Time</p>
-                <p class="mg-top time" id="time-5"></p>
+                <p class="subtitle" id="venue-5">
+                  Venue, Address, Date and Time
+                </p>
+                <button class="direct-link" id="address-5">
+                  
+                </button>
+                <p class="time" id="time-5"></p>
                 <div class="control">
                   <button
                     id="btn-6"
                     class="save-btn button is-primary artist-btn"
                   >
-                    Select
+                    Save<i class="ml-2 fa-solid fa-cloud-arrow-down"></i>
                   </button>
                 </div>
               </article>
@@ -227,9 +261,11 @@
         <div class="tile is-parent content is-normal fix-width">
           <article class="tile is-child box card-clr">
             <div class="lined-up">
-            <h3>My Saved Concerts:</h3>
-            <button class="dlt is-light">Delete All  <i class="fa-regular fa-trash-can"></i></button>
-          </div>
+              <h3>My Saved Concerts:</h3>
+              <button class="dlt is-light">
+                Delete All <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </div>
             <ul id="saved-list"></ul>
           </article>
         </div>

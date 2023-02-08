@@ -15,6 +15,7 @@
     margin-top: 44px;
 }
 
+
 .crowd-pic {
     background-image: url("./images/concert-crowd2.jpg");
 
@@ -47,10 +48,14 @@ font-family: 'Sonsie One', sans-serif, cursive;
     background-color: rgb(31, 31, 76) !important;
 }
 
+.artist-btn:hover {
+    box-shadow: 5px 10px gray;
+}
+
 .center-btns {
     display: flex;
     justify-content: center;
-    margin-left: 100px;
+    margin-left: 25px;
 }
 
 .mg-top {
@@ -67,6 +72,38 @@ font-family: 'Sonsie One', sans-serif, cursive;
    background: rgb(224, 120, 120);
    font-weight: bold;
 }
+
+.dlt:hover {
+    box-shadow: 5px 10px gray;
+    cursor: pointer;
+}
+
+.direct-link {
+    background: transparent;
+    border: none;
+    color: blue;
+    margin-left: -5px;
+    font-size: 15px;
+    margin-top: -20px !important;
+}
+
+.blue-show {
+    background: transparent;
+    border: none;
+    color: blue;
+    margin-left: -5px;
+    font-size: 15px;
+    margin-top: -20px !important;
+}
+
+.direct-link:hover {
+    cursor: pointer;
+}
+
+.subtitle {
+    margin-bottom: 5px !important;
+}
+
 
 
 
