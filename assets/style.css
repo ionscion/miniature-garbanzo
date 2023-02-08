@@ -2,6 +2,10 @@
     background: linear-gradient(to top, rgb(27, 36, 211), black);
 }
 
+.lined-up {
+    display: flex;
+    justify-content: space-between;
+}
 .card-clr {
 
     background: linear-gradient(to top, white, #00d1b2);
@@ -58,7 +62,11 @@ font-family: 'Sonsie One', sans-serif, cursive;
     margin-right: -13px ;
 }
 
-
+.dlt {
+   border-radius: 5px;
+   background: rgb(224, 120, 120);
+   font-weight: bold;
+}
 
 
 

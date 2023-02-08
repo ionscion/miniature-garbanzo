@@ -13,6 +13,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -225,13 +226,19 @@
         </section>
         <div class="tile is-parent content is-normal fix-width">
           <article class="tile is-child box card-clr">
+            <div class="lined-up">
             <h3>My Saved Concerts:</h3>
+            <button class="dlt is-light">Delete All  <i class="fa-regular fa-trash-can"></i></button>
+          </div>
             <ul id="saved-list"></ul>
           </article>
         </div>
       </div>
     </div>
-
+    <script
+      src="https://kit.fontawesome.com/ce42e41f83.js"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
