@@ -111,25 +111,20 @@ function clearPage() {
 function clearSearch() {
   cityInputElem.value = "";
   selectedStateElem.value = "";
-  console.log("clear search ran");
 }
 
 function saveConcert(artist, venueAddress, venuePostalCode) {
   let concertSearch = JSON.parse(localStorage.getItem("concert-search")) || [];
-  console.log(artist,venueAddress, venuePostalCode);
   concertSearch.push(`${artist}, ${venueAddress}, ${venuePostalCode}`);
   localStorage.setItem("concert-search", JSON.stringify(concertSearch));
 }
 
-function saveConcert2(event) {
+function saveConcert2() {
   const parent = this.parentElement.parentElement;
   const title = parent.querySelector(".title").textContent;
   const subtitle = parent.querySelector(".subtitle").textContent;
   const time = parent.querySelector(".mg-top").textContent;
-
-  console.log("title:", title);
-  console.log("subtitle:", subtitle);
-  console.log("time:", time);
+  
   let concertSearch = JSON.parse(localStorage.getItem("concert-search")) || [];
   concertSearch.push(`${title}, ${subtitle}, ${time}`);
   localStorage.setItem("concert-search", JSON.stringify(concertSearch));
@@ -160,8 +155,9 @@ function renderSearch() {
 }
 
 function deleteConcerts() {
-  
+  localStorage.clear();
 }
+
 function init() {
   renderSearch();
 }
@@ -169,5 +165,6 @@ init();
 clearButton.addEventListener("click", clearSearch);
 searchButton.addEventListener("click", getCityApi);
 ipSearchButton.addEventListener("click", getCurrentIpApi);
+deleteBtn.addEventListener("click", deleteConcerts)
 
 // saveBtn.addEventListener("click", saveConcert2);
