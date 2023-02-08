@@ -6,7 +6,6 @@ let columnData = document.getElementById("column-1");
 let clearButton = document.getElementById("clear-btn");
 let cityInputElem = document.getElementById("city-input");
 let selectedStateElem = document.getElementById("state-input");
-// let saveBtn = document.querySelector(".save-btn");
 let savedList = document.getElementById("saved-list");
 let deleteBtn = document.querySelector(".dlt");
 let saveButton = $(".save-btn");
@@ -122,23 +121,6 @@ function clearSearch() {
   selectedStateElem.value = "";
 }
 
-// function saveConcert(artist, venueAddress, venuePostalCode) {
-//   let concertSearch = JSON.parse(localStorage.getItem("concert-search")) || [];
-//   concertSearch.push(`${artist}, ${venueAddress}, ${venuePostalCode}`);
-//   localStorage.setItem("concert-search", JSON.stringify(concertSearch));
-// }
-
-// function saveConcert2() {
-//   const parent = this.parentElement.parentElement;
-//   const title = parent.querySelector(".title").textContent;
-//   const subtitle = parent.querySelector(".subtitle").textContent;
-//   const time = parent.querySelector(".mg-top").textContent;
-
-//   let concertSearch = JSON.parse(localStorage.getItem("concert-search")) || [];
-//   concertSearch.push(`${title}, ${subtitle}, ${time}`);
-//   localStorage.setItem("concert-search", JSON.stringify(concertSearch));
-// }
-
 $(function () {
   saveButton.on("click", function () {
     let clickedSaveButton = $(this);
@@ -167,6 +149,7 @@ function renderSearch() {
 
 function deleteConcerts() {
   localStorage.clear();
+  savedList.textContent = "";
 }
 
 function init() {
@@ -178,5 +161,3 @@ clearButton.addEventListener("click", clearSearch);
 searchButton.addEventListener("click", getCityApi);
 ipSearchButton.addEventListener("click", getCurrentIpApi);
 deleteBtn.addEventListener("click", deleteConcerts);
-
-// saveBtn.addEventListener("click", saveConcert2);
