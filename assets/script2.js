@@ -6,8 +6,10 @@ let columnData = document.getElementById("column-1");
 let clearButton = document.getElementById("clear-btn");
 let cityInputElem = document.getElementById("city-input");
 let selectedStateElem = document.getElementById("state-input");
-let saveBtn = document.querySelector(".save-btn");
+// let saveBtn = document.querySelector(".save-btn");
 let savedList = document.getElementById("saved-list");
+
+let saveButton = $(".save-btn");
 
 let weatherapi = "326e6d35f7ebe093972477e3b80624aa";
 let seatgeekapi = "MzE3NDAyMDR8MTY3NTM1NDU3My4xNzIzODQ";
@@ -42,7 +44,6 @@ function getCityApi(evt) {
           console.log("no city was found!");
         }
       }
-      // this will be the function Nate is working on below
       getConcertApi(latitude, longitude);
     })
     .catch(function (error) {
@@ -132,6 +133,19 @@ function saveConcert2() {
   localStorage.setItem("concert-search", JSON.stringify(concertSearch));
 }
 
+$(function() {
+  saveButton.on("click", function(){
+    let clickedSaveButton = $(this);
+    let title = clickedSaveButton.closest(".control").siblings(".title").text();
+    let subtitle = clickedSaveButton.closest(".control").siblings(".subtitle").text();
+    let time = clickedSaveButton.closest(".control").siblings(".time").text();
+    let concertSearch = JSON.parse(localStorage.getItem("concert-search")) || [];
+    concertSearch.push(`${title}, ${subtitle}, ${time}`);
+    localStorage.setItem("concert-search", JSON.stringify(concertSearch));
+  });
+}
+
+);
 
 function renderSearch() {
   let savedSearches = JSON.parse(localStorage.getItem("concert-search"));
@@ -149,4 +163,5 @@ init();
 clearButton.addEventListener("click", clearSearch);
 searchButton.addEventListener("click", getCityApi);
 ipSearchButton.addEventListener("click", getCurrentIpApi);
-saveBtn.addEventListener("click", saveConcert2);
+
+// saveBtn.addEventListener("click", saveConcert2);
