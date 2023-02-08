@@ -4,14 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Concert Connection</title>
-    <link rel="icon" type="image/x-icon" href="./assets/images/guitar-favicon.png">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/images/guitar-favicon.png"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Sonsie+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Sonsie+One&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
@@ -38,164 +45,199 @@
               </div>
               <div class="select control">
                 <select class="selection" id="state-input" required>
-                    <option selected value="Pick state below">State</option>
-                    <option value="Alabama">AL</option>
-                    <option value="Alaska">AK</option>
-                    <option value="Arkansas">AR</option>
-                    <option value="Arizona">AZ</option>
-                    <option value="California">CA</option>
-                    <option value="Colorado">CO</option>
-                    <option value="Connecticut">CT</option>
-                    <option value="Delaware">DE</option>
-                    <option value="Florida">FL</option>
-                    <option value="Georgia">GA</option>
-                    <option value="Hawaii">HI</option>
-                    <option value="Iowa">IA</option>
-                    <option value="Idaho">ID</option>
-                    <option value="Illinois">IL</option>
-                    <option value="Indiana">IN</option>
-                    <option value="Kentucky">KY</option>
-                    <option value="Kansas">KS</option>
-                    <option value="Louisiana">LA</option>
-                    <option value="Massachusetts">MA</option>
-                    <option value="Maryland">MD</option>
-                    <option value="Maine">ME</option>
-                    <option value="Michigan">MI</option>
-                    <option value="Minnesota">MN</option>
-                    <option value="Missouri">MO</option>
-                    <option value="Mississippi">MS</option>
-                    <option value="Montana">MT</option>
-                    <option value="North Carolina">NC</option>
-                    <option value="North Dakota">ND</option>
-                    <option value="Nebraska">NE</option>
-                    <option value="New Hampshire">NH</option>
-                    <option value="New Jersey">NJ</option>
-                    <option value="New Mexico">NM</option>
-                    <option value="New York">NY</option>
-                    <option value="Nevada">NV</option>
-                    <option value="Ohio">OH</option>
-                    <option value="Oklahoma">OK</option>
-                    <option value="Oregon">OR</option>
-                    <option value="Pennsylvania">PA</option>
-                    <option value="Rhode Island">RI</option>
-                    <option value="South Carolina">SC</option>
-                    <option value="South Dakota">SD</option>
-                    <option value="Tennessee">TN</option>
-                    <option value="Texas">TX</option>
-                    <option value="Utah">UT</option>
-                    <option value="Virginia">VA</option>
-                    <option value="Vermont">VT</option>
-                    <option value="Washington">WA</option>
-                    <option value="Wisconsin">WI</option>
-                    <option value="West Virginia">WV</option>
-                    <option value="Wyoming">WY</option>
+                  <option selected value="Pick state below">State</option>
+                  <option value="Alabama">AL</option>
+                  <option value="Alaska">AK</option>
+                  <option value="Arkansas">AR</option>
+                  <option value="Arizona">AZ</option>
+                  <option value="California">CA</option>
+                  <option value="Colorado">CO</option>
+                  <option value="Connecticut">CT</option>
+                  <option value="Delaware">DE</option>
+                  <option value="Florida">FL</option>
+                  <option value="Georgia">GA</option>
+                  <option value="Hawaii">HI</option>
+                  <option value="Iowa">IA</option>
+                  <option value="Idaho">ID</option>
+                  <option value="Illinois">IL</option>
+                  <option value="Indiana">IN</option>
+                  <option value="Kentucky">KY</option>
+                  <option value="Kansas">KS</option>
+                  <option value="Louisiana">LA</option>
+                  <option value="Massachusetts">MA</option>
+                  <option value="Maryland">MD</option>
+                  <option value="Maine">ME</option>
+                  <option value="Michigan">MI</option>
+                  <option value="Minnesota">MN</option>
+                  <option value="Missouri">MO</option>
+                  <option value="Mississippi">MS</option>
+                  <option value="Montana">MT</option>
+                  <option value="North Carolina">NC</option>
+                  <option value="North Dakota">ND</option>
+                  <option value="Nebraska">NE</option>
+                  <option value="New Hampshire">NH</option>
+                  <option value="New Jersey">NJ</option>
+                  <option value="New Mexico">NM</option>
+                  <option value="New York">NY</option>
+                  <option value="Nevada">NV</option>
+                  <option value="Ohio">OH</option>
+                  <option value="Oklahoma">OK</option>
+                  <option value="Oregon">OR</option>
+                  <option value="Pennsylvania">PA</option>
+                  <option value="Rhode Island">RI</option>
+                  <option value="South Carolina">SC</option>
+                  <option value="South Dakota">SD</option>
+                  <option value="Tennessee">TN</option>
+                  <option value="Texas">TX</option>
+                  <option value="Utah">UT</option>
+                  <option value="Virginia">VA</option>
+                  <option value="Vermont">VT</option>
+                  <option value="Washington">WA</option>
+                  <option value="Wisconsin">WI</option>
+                  <option value="West Virginia">WV</option>
+                  <option value="Wyoming">WY</option>
                 </select>
               </div>
-              </div>
-              <div class="center-btns">
+            </div>
+            <div class="center-btns">
               <div class="field is-grouped column is-half">
                 <div class="control">
-                  <button class="button is-link clr-btn" id="search-btn">Submit</button>
+                  <button class="button is-link clr-btn" id="search-btn">
+                    Submit
+                  </button>
                 </div>
-                
+
                 <div class="control">
                   <button class="button is-link clr-btn" id="ip-search-btn">
                     Search By Current Location
-                  </button>                  
+                  </button>
                 </div>
-                
+
                 <div class="control">
-                  <button class="button is-link is-light" id="clear-btn">Clear Search</button>
+                  <button class="button is-link is-light" id="clear-btn">
+                    Clear Search
+                  </button>
                 </div>
               </div>
             </div>
+          </div>
         </section>
       </div>
       <div class="container mt-3">
-      <section>
-        <div class="tile is-ancestor">
-          <div class="tile is-parent">
-            <article class="tile is-child box card-clr">
-              <p class="title" id="column-0">Artist</p>
-              <p class="subtitle" id="venue-0">Location, Date and Time</p>
-              <p class="mg-top" id="time-0"></p>
-              <div class="control">
-                <button id = "btn-1" class="save-btn button is-primary artist-btn">Select</button>
-              </div>
-            </article>
+        <section>
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <article class="tile is-child box card-clr">
+                <p class="title" id="column-0">Artist</p>
+                <p class="subtitle" id="venue-0">Location, Date and Time</p>
+                <p class="mg-top time" id="time-0"></p>
+                <div class="control">
+                  <button
+                    id="btn-1"
+                    class="save-btn button is-primary artist-btn"
+                  >
+                    Select
+                  </button>
+                </div>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box card-clr">
+                <p class="title" id="column-1">Artist</p>
+                <p class="subtitle" id="venue-1">Location, Date and Time</p>
+                <p class="mg-top time" id="time-1"></p>
+                <div class="control">
+                  <button
+                    id="btn-2"
+                    class="save-btn button is-primary artist-btn"
+                  >
+                    Select
+                  </button>
+                </div>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box card-clr">
+                <p class="title" id="column-2">Artist</p>
+                <p class="subtitle" id="venue-2">Location, Date and Time</p>
+                <p class="mg-top time" id="time-2"></p>
+                <div class="control">
+                  <button
+                    id="btn-3"
+                    class="save-btn button is-primary artist-btn"
+                  >
+                    Select
+                  </button>
+                </div>
+              </article>
+            </div>
           </div>
-          <div class="tile is-parent">
-            <article class="tile is-child box card-clr">
-              <p class="title" id="column-1">Artist</p>
-              <p class="subtitle" id="venue-1">Location, Date and Time</p>
-              <p class="mg-top" id="time-1"></p>
-              <div class="control">
-                <button id = "btn-2" class="save-btn button is-primary artist-btn">Select</button>
-              </div>
-            </article>
+        </section>
+        <section>
+          <div class="tile is-ancestor">
+            <div class="tile is-parent">
+              <article class="tile is-child box card-clr">
+                <p class="title" id="column-3">Artist</p>
+                <p class="subtitle" id="venue-3">Location, Date and Time</p>
+                <p class="mg-top time" id="time-3"></p>
+
+                <div class="control">
+                  <button
+                    id="btn-4"
+                    class="save-btn button is-primary artist-btn"
+                  >
+                    Select
+                  </button>
+                </div>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box card-clr">
+                <p class="title" id="column-4">Artist</p>
+                <p class="subtitle" id="venue-4">Location, Date and Time</p>
+                <p class="mg-top time" id="time-4"></p>
+                <div class="control">
+                  <button
+                    id="btn-5"
+                    class="save-btn button is-primary artist-btn"
+                  >
+                    Select
+                  </button>
+                </div>
+              </article>
+            </div>
+            <div class="tile is-parent">
+              <article class="tile is-child box card-clr">
+                <p class="title" id="column-5">Artist</p>
+                <p class="subtitle" id="venue-5">Location, Date and Time</p>
+                <p class="mg-top time" id="time-5"></p>
+                <div class="control">
+                  <button
+                    id="btn-6"
+                    class="save-btn button is-primary artist-btn"
+                  >
+                    Select
+                  </button>
+                </div>
+              </article>
+            </div>
           </div>
-          <div class="tile is-parent">
-            <article class="tile is-child box card-clr">
-              <p class="title" id="column-2">Artist</p>
-              <p class="subtitle" id="venue-2">Location, Date and Time</p>
-              <p class="mg-top" id="time-2"></p>
-              <div class="control">
-                <button id = "btn-3" class="save-btn button is-primary artist-btn">Select</button>
-              </div>
-            </article>
-          </div>
+        </section>
+        <div class="tile is-parent content is-normal fix-width">
+          <article class="tile is-child box card-clr">
+            <h3>My Saved Concerts:</h3>
+            <ul id="saved-list"></ul>
+          </article>
         </div>
-      </section>
-      <section>
-        <div class="tile is-ancestor">
-          <div class="tile is-parent">
-            <article class="tile is-child box card-clr">
-              <p class="title" id="column-3">Artist</p>
-              <p class="subtitle" id="venue-3">Location, Date and Time</p>
-              <p class="mg-top" id="time-3"></p>
-              
-              <div class="control">
-                <button id = "btn-4" class="save-btn button is-primary artist-btn">Select</button>
-              </div>
-            </article>
-          </div>
-          <div class="tile is-parent">
-            <article class="tile is-child box card-clr">
-              <p class="title" id="column-4">Artist</p>
-              <p class="subtitle" id="venue-4">Location, Date and Time</p>
-              <p class="mg-top" id="time-4"></p>
-              <div class="control">
-                <button id = "btn-5" class="save-btn button is-primary artist-btn">Select</button>
-              </div>
-            </article>
-          </div>
-          <div class="tile is-parent">
-            <article class="tile is-child box card-clr">
-              <p class="title" id="column-5">Artist</p>
-              <p class="subtitle" id="venue-5">Location, Date and Time</p>
-              <p class="mg-top" id="time-5"></p>
-              <div class="control">
-                <button id = "btn-6" class="save-btn button is-primary artist-btn">Select</button>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-      <div class="tile is-parent content is-normal fix-width">
-        <article class="tile is-child box card-clr">
-          <h3>My Saved Concerts:</h3>
-          <ul id="saved-list">
-          </ul>
-        </article>
-      </div>
       </div>
     </div>
 
     <script
-    src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-    crossorigin="anonymous"
-  ></script>
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/script.js"></script>
     <script src="./assets/script2.js"></script>
   </body>
