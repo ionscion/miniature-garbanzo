@@ -1,7 +1,7 @@
 .bkg-clr {
   background: linear-gradient(to top, rgb(27, 36, 211), black);
   /* position: relative; */
-  overflow: hidden;
+  /* overflow: hidden; */
   width: auto;
   height: 100vh;
 }
@@ -20,11 +20,32 @@
 
 .control{
     padding: 5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.ticket {
+    background: orange;
+    color: white;
+    
+}
+
+.ticket:hover {
+  box-shadow: 5px 10px gray;
+  color: white;
+}
+
+.tkt {
+  color:rgba(236, 95, 13, 0.992)
+}
+
+.sv-icon {
+  color: #00d1b2
 }
 
 .crowd-pic {
   background-image: url("./images/concert-crowd2.jpg");
-
+  overflow: hidden;
   background-size: cover;
   background-color: white !important;
 }
@@ -78,7 +99,7 @@
 
 .dlt {
   border-radius: 5px;
-  background: rgb(224, 120, 120);
+  background: rgba(236, 95, 13, 0.992);
   font-weight: bold;
 }
 

@@ -53,9 +53,10 @@ function getCityApi(evt) {
 }
 
 // Pulling artist, venue, address and date from SeatGeek API and directions to venue
+//Added per_page into URL to bring back 25 results
 function getConcertApi() {
   clearPage();
-  let seatGeekUrl = `https://api.seatgeek.com/2/events?lat=${latitude}&lon=${longitude}&range=5mi&taxonomies.name=concert&client_id=${seatgeekapi}`;
+  let seatGeekUrl = `https://api.seatgeek.com/2/events?lat=${latitude}&lon=${longitude}&per_page=25&range=5mi&taxonomies.name=concert&client_id=${seatgeekapi}`;
   fetch(seatGeekUrl)
     .then(function (response) {
       return response.json();
@@ -88,6 +89,13 @@ function getConcertApi() {
             },${data.events[i].venue.postal_code}&travelmode=driving`;
             window.open(google, "_blank");
           });
+
+          document.getElementById("ticket-" + [i]).addEventListener("click", function getTickets() {
+            let ticketLink = data.events[i].url
+            window.open(ticketLink, "_blank");
+
+
+          })
       }
     });
 
