@@ -1,6 +1,11 @@
 .bkg-clr {
     background: linear-gradient(to top, rgb(27, 36, 211), black);
+    /* position: relative; */
+    overflow: hidden;
+    width: auto;
 }
+
+
 
 .lined-up {
     display: flex;
@@ -22,6 +27,9 @@
    background-size: cover;
    background-color: white !important;
 
+
+
+}
 
 }
 .notification.is-primary {
