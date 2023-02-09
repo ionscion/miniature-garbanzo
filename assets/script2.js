@@ -140,11 +140,13 @@ $(function () {
       JSON.parse(localStorage.getItem("concert-search")) || [];
     concertSearch.push(`${title}, ${subtitle}, ${time}`);
     localStorage.setItem("concert-search", JSON.stringify(concertSearch));
+    renderSearch();
   });
 });
 
 //Display the saved concert below in the saved searches section
 function renderSearch() {
+  savedList.textContent = "";
   let savedSearches = JSON.parse(localStorage.getItem("concert-search"));
   let uniqueData = [...new Set(savedSearches)];
   for (let index = 0; index < uniqueData.length; index++) {
