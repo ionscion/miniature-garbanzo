@@ -52,7 +52,7 @@ function getCityApi(evt) {
   clearSearch();
 }
 
-// Pulling artist, venue, address and date from SeatGeek API
+// Pulling artist, venue, address and date from SeatGeek API and directions to venue
 function getConcertApi() {
   clearPage();
   let seatGeekUrl = `https://api.seatgeek.com/2/events?lat=${latitude}&lon=${longitude}&range=5mi&taxonomies.name=concert&client_id=${seatgeekapi}`;
@@ -140,11 +140,13 @@ $(function () {
       JSON.parse(localStorage.getItem("concert-search")) || [];
     concertSearch.push(`${title}, ${subtitle}, ${time}`);
     localStorage.setItem("concert-search", JSON.stringify(concertSearch));
+    renderSearch();
   });
 });
 
 //Display the saved concert below in the saved searches section
 function renderSearch() {
+  savedList.textContent = "";
   let savedSearches = JSON.parse(localStorage.getItem("concert-search"));
   let uniqueData = [...new Set(savedSearches)];
   for (let index = 0; index < uniqueData.length; index++) {
