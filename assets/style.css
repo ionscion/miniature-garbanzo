@@ -31,6 +31,8 @@
 
 }
 
+.select{
+    margin-left: 25px;
 }
 .notification.is-primary {
     background-color: white;
@@ -113,7 +115,11 @@ font-family: 'Sonsie One', sans-serif, cursive;
 }
 
 
-
-
+@media screen and (max-width: 395px ) 
+{ .center, .label, strong{
+    color: aliceblue;
+}
+    
+}
 
 
