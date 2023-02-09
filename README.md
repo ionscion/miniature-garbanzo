@@ -44,15 +44,19 @@ This is the header of our overall description.
 - WHEN I open the live music webpage
 - THEN I am presented with a search bar
 - WHEN I enter my current city and state
-- THEN I am presented with venues, artists for the next 7 days
+- THEN I am presented with venues, artists for the next couple days
 - WHEN I select one of the options
 - THEN the text for that option is saved in local storage and displayed on my user dashboard
 - WHEN I refresh the page
 - THEN the saved events persist
 
+# Images
+
+![Website Screen Shots](./assets/images/Webpage.png)
+
 # Description
 
-This will be a description of the functionality of the website, along with photos showing its use.
+When you enter a city and state, multiple shows near you will populate on the page. If you click on the address, you will be directed to google maps to see how to get to the venue. You can save a show that looks interesting and it will populate when the page is loaded
 
 # Technology
 
