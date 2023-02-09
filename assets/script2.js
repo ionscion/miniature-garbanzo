@@ -52,7 +52,7 @@ function getCityApi(evt) {
   clearSearch();
 }
 
-// Pulling artist, venue, address and date from SeatGeek API
+// Pulling artist, venue, address and date from SeatGeek API and directions to venue
 function getConcertApi() {
   clearPage();
   let seatGeekUrl = `https://api.seatgeek.com/2/events?lat=${latitude}&lon=${longitude}&range=5mi&taxonomies.name=concert&client_id=${seatgeekapi}`;
