@@ -9,6 +9,7 @@ let selectedStateElem = document.getElementById("state-input");
 let savedList = document.getElementById("saved-list");
 let deleteBtn = document.querySelector(".dlt");
 let saveButton = $(".save-btn");
+let failure = document.getElementById("failure");
 
 let weatherapi = "326e6d35f7ebe093972477e3b80624aa";
 let seatgeekapi = "MzE3NDAyMDR8MTY3NTM1NDU3My4xNzIzODQ";
@@ -18,6 +19,8 @@ let ipGeo = "38673022df5a4cfdbd8d9da66bf8a214";
 
 function getCityApi(evt) {
   evt.preventDefault();
+  failure.classList.add("hidden");
+  failure.textContent = "";
   let cityInput = cityInputElem.value;
   let selectedState = selectedStateElem.value;
 
@@ -32,23 +35,30 @@ function getCityApi(evt) {
       return response.json();
     })
     .then(function (data) {
-      for (let i = 0; i < data.length; i++) {
-        const returnedName = data[i].name.toLowerCase();
-        if (cityInput.toLowerCase().includes(returnedName)) {
-          console.log("city matches exactly");
-          latitude.push(data[0].lat);
-          longitude.push(data[0].lon);
-          console.log(`${latitude},${longitude}`);
-        } else {
-          console.log("no city was found!");
+      if (data.length === 0) {
+        console.log("no city was found!");
+        // Display the failure message
+        failure.classList.remove("hidden");
+        let failureMessage = document.createElement("p");
+        failureMessage.textContent =
+          "No city and state combination was found. Please make sure a state has been selected and city spelling is correct.";
+        failure.appendChild(failureMessage);
+      } else {
+        for (let i = 0; i < data.length; i++) {
+          const returnedName = data[i].name.toLowerCase();
+          if (cityInput.toLowerCase().includes(returnedName)) {
+            console.log("city matches exactly");
+            latitude.push(data[0].lat);
+            longitude.push(data[0].lon);
+            console.log(`${latitude},${longitude}`);
+          }
         }
+        getConcertApi(latitude, longitude);
       }
-      getConcertApi(latitude, longitude);
     })
     .catch(function (error) {
       console.error("There was a problem with the fetch operation:", error);
     });
-  // searchSave(cityInput, selectedState);
   clearSearch();
 }
 
@@ -90,12 +100,12 @@ function getConcertApi() {
             window.open(google, "_blank");
           });
 
-          document.getElementById("ticket-" + [i]).addEventListener("click", function getTickets() {
-            let ticketLink = data.events[i].url
+        document
+          .getElementById("ticket-" + [i])
+          .addEventListener("click", function getTickets() {
+            let ticketLink = data.events[i].url;
             window.open(ticketLink, "_blank");
-
-
-          })
+          });
       }
     });
 
@@ -105,6 +115,8 @@ function getConcertApi() {
 
 //Gets location by IP address
 function getCurrentIpApi() {
+  failure.classList.add("hidden");
+  failure.textContent = "";
   let ipGeoUrl = `https://api.ipgeolocation.io/ipgeo?apiKey=${ipGeo}`;
   fetch(ipGeoUrl)
     .then(function (response) {
@@ -122,10 +134,6 @@ function getCurrentIpApi() {
 //Clears the page
 function clearPage() {
   columnData.textContent = "";
-  //   for (let i = 0; i < 5; i++) {
-  //     let currentId = document.getElementById(`day-${i + 1}`);
-  //     currentId.textContent = "";
-  //   }
 }
 
 //Clears the search

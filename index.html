@@ -20,31 +20,31 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/style.css" />
-  
   </head>
   <body>
     <div class="bkg-clr">
       <div class="is-primary">
         <section class="section crowd-pic">
           <div class="container">
-            <h1 class="center head-size">Concert Connection</h1>
-            <p class="center">
-              Find your next <strong>live music</strong> experience!
-            </p>
-            <div class="columns is-multiline is-centered">
-              <div class="field column is-half is-margin-small">
-                <label class="label">City Search</label>
-                <div class="control">
-                  <input
-                    class="input is-rounded"
-                    id="city-input"
-                    type="text"
-                    placeholder="Enter City and Select State"
-                    required
-                  />
-                </div>
+            <div class="titles">
+              <h1 class="center head-size">Concert Connection</h1>
+              <p class="center">
+                Find your next <strong>live music</strong> experience!
+              </p>
+            </div>
+
+            <div class="columns" id="city-group">
+              <div class="control city" id="city-search">
+                <input
+                  class="input is-rounded fixed-width"
+                  id="city-input"
+                  type="text"
+                  placeholder="Enter City and Select State"
+                  required
+                />
               </div>
-              <div class="select control">
+
+              <div class="select state">
                 <select class="selection" id="state-input" required>
                   <option selected value="Pick state below">State</option>
                   <option value="Alabama">AL</option>
@@ -124,6 +124,9 @@
             </div>
           </div>
         </section>
+        <div class="hidden" id="failure">
+
+        </div>
       </div>
       <div class="container mt-3">
         <section>
@@ -141,10 +144,17 @@
                     id="btn-1"
                     class="save-btn button is-primary artist-btn"
                   >
-                    Save<i class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"></i>
+                    Save<i
+                      class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"
+                    ></i>
                   </button>
-                  <button id="ticket-0" class="ticket button"><i class="tkt mr-2 fa-solid fa-ticket fa-rotate-by" style = "--fa-rotate-angle:-35deg;"></i>Tickets</button>
-
+                  <button id="ticket-0" class="ticket button">
+                    <i
+                      class="tkt mr-2 fa-solid fa-ticket fa-rotate-by"
+                      style="--fa-rotate-angle: -35deg"
+                    ></i
+                    >Tickets
+                  </button>
                 </div>
               </article>
             </div>
@@ -161,9 +171,17 @@
                     id="btn-2"
                     class="save-btn button is-primary artist-btn"
                   >
-                    Save<i class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"></i>
+                    Save<i
+                      class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"
+                    ></i>
                   </button>
-                  <button id="ticket-1" class="ticket button"><i class="tkt mr-2 fa-solid fa-ticket fa-rotate-by" style = "--fa-rotate-angle:-35deg;"></i>Tickets</button>
+                  <button id="ticket-1" class="ticket button">
+                    <i
+                      class="tkt mr-2 fa-solid fa-ticket fa-rotate-by"
+                      style="--fa-rotate-angle: -35deg"
+                    ></i
+                    >Tickets
+                  </button>
                 </div>
               </article>
             </div>
@@ -180,9 +198,17 @@
                     id="btn-3"
                     class="save-btn button is-primary artist-btn"
                   >
-                    Save<i class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"></i>
+                    Save<i
+                      class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"
+                    ></i>
                   </button>
-                  <button id="ticket-2" class="ticket button"><i class="tkt mr-2 fa-solid fa-ticket fa-rotate-by" style = "--fa-rotate-angle:-35deg;"></i>Tickets</button>
+                  <button id="ticket-2" class="ticket button">
+                    <i
+                      class="tkt mr-2 fa-solid fa-ticket fa-rotate-by"
+                      style="--fa-rotate-angle: -35deg"
+                    ></i
+                    >Tickets
+                  </button>
                 </div>
               </article>
             </div>
@@ -204,9 +230,17 @@
                     id="btn-4"
                     class="save-btn button is-primary artist-btn"
                   >
-                    Save<i class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"></i>
+                    Save<i
+                      class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"
+                    ></i>
                   </button>
-                  <button id="ticket-3" class="ticket button"><i class="tkt mr-2 fa-solid fa-ticket fa-rotate-by" style = "--fa-rotate-angle:-35deg;"></i>Tickets</button>
+                  <button id="ticket-3" class="ticket button">
+                    <i
+                      class="tkt mr-2 fa-solid fa-ticket fa-rotate-by"
+                      style="--fa-rotate-angle: -35deg"
+                    ></i
+                    >Tickets
+                  </button>
                 </div>
               </article>
             </div>
@@ -223,9 +257,17 @@
                     id="btn-5"
                     class="save-btn button is-primary artist-btn"
                   >
-                    Save<i class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"></i>
+                    Save<i
+                      class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"
+                    ></i>
                   </button>
-                  <button id="ticket-4" class="ticket button"><i class="tkt mr-2 fa-solid fa-ticket fa-rotate-by" style = "--fa-rotate-angle:-35deg;"></i>Tickets</button>
+                  <button id="ticket-4" class="ticket button">
+                    <i
+                      class="tkt mr-2 fa-solid fa-ticket fa-rotate-by"
+                      style="--fa-rotate-angle: -35deg"
+                    ></i
+                    >Tickets
+                  </button>
                 </div>
               </article>
             </div>
@@ -242,9 +284,17 @@
                     id="btn-6"
                     class="save-btn button is-primary artist-btn"
                   >
-                    Save<i class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"></i>
+                    Save<i
+                      class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"
+                    ></i>
                   </button>
-                  <button id="ticket-5" class="ticket button"><i class="tkt mr-2 fa-solid fa-ticket fa-rotate-by" style = "--fa-rotate-angle:-35deg;"></i>Tickets</button>
+                  <button id="ticket-5" class="ticket button">
+                    <i
+                      class="tkt mr-2 fa-solid fa-ticket fa-rotate-by"
+                      style="--fa-rotate-angle: -35deg"
+                    ></i
+                    >Tickets
+                  </button>
                 </div>
               </article>
             </div>
