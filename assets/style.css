@@ -171,6 +171,16 @@ flex-basis: content;
   margin: 10px;
 }
 
+#failure {
+  text-align: center;
+  color: aliceblue;
+  font-weight: bolder;
+}
+
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 395px) {
   .center,
   .label,
