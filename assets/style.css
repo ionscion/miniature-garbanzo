@@ -18,6 +18,10 @@
   margin-top: 44px;
 }
 
+.control{
+    padding: 5px;
+}
+
 .crowd-pic {
   background-image: url("./images/concert-crowd2.jpg");
 
@@ -60,6 +64,7 @@
   display: flex;
   justify-content: center;
   margin-left: 25px;
+  padding: 5px;
 }
 
 .mg-top {
