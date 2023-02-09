@@ -10,6 +10,7 @@ let savedList = document.getElementById("saved-list");
 let deleteBtn = document.querySelector(".dlt");
 let saveButton = $(".save-btn");
 let failure = document.getElementById("failure");
+let section = document.getElementById("tile-section");
 
 let weatherapi = "326e6d35f7ebe093972477e3b80624aa";
 let seatgeekapi = "MzE3NDAyMDR8MTY3NTM1NDU3My4xNzIzODQ";
@@ -65,6 +66,7 @@ function getCityApi(evt) {
 // Pulling artist, venue, address and date from SeatGeek API and directions to venue
 //Added per_page into URL to bring back 25 results
 function getConcertApi() {
+  section.classList.remove("hidden");
   clearPage();
   let seatGeekUrl = `https://api.seatgeek.com/2/events?lat=${latitude}&lon=${longitude}&per_page=25&range=5mi&taxonomies.name=concert&client_id=${seatgeekapi}`;
   fetch(seatGeekUrl)
@@ -73,7 +75,7 @@ function getConcertApi() {
     })
     .then(function (data) {
       console.log(data);
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 9; i++) {
         let performer = document.getElementById("column-" + [i]);
         let showVenue = document.getElementById("venue-" + [i]);
         let showAddress = document.getElementById("address-" + [i]);
