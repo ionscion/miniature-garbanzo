@@ -1,10 +1,19 @@
-.bkg-clr {
+* {
+  box-sizing: border-box;
+}
+body {
   background: linear-gradient(to top, rgb(27, 36, 211), black);
-  /* position: relative; */
-  /* overflow: hidden; */
+  min-height: 100vh;
+  background-size: cover;
+}
+
+/* .bkg-clr {
+  background: linear-gradient(to top, rgb(27, 36, 211), black);
+  position: relative;
+  overflow: hidden; 
   width: auto;
   height: 100vh;
-}
+} */
 
 .lined-up {
   display: flex;
@@ -134,10 +143,42 @@
   margin-bottom: 5px !important;
 }
 
+#city-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fixed-width {
+  width: 500px;
+}
+
+.city {
+flex-basis: content;
+}
+
+.state {
+  margin-left: 10px;
+  margin-top: 0;
+}
+
+.label {
+  color:aquamarine;
+}
+
+.titles {
+  margin: 10px;
+}
+
 @media screen and (max-width: 395px) {
   .center,
   .label,
   strong {
     color: aliceblue;
+  }
+
+  .fixed-width {
+    width: 300px;
   }
 }
