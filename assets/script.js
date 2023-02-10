@@ -12,7 +12,7 @@ let deleteBtn = document.querySelector(".dlt");
 let failure = document.getElementById("failure");
 let section = document.getElementById("real-section");
 // let ancest = document.getElementById("ancestor-Id");
-
+let hideBox = document.getElementById("hide-box");
 let weatherapi = "326e6d35f7ebe093972477e3b80624aa";
 let seatgeekapi = "MzE3NDAyMDR8MTY3NTM1NDU3My4xNzIzODQ";
 let ipGeo = "38673022df5a4cfdbd8d9da66bf8a214";
@@ -76,7 +76,7 @@ function getConcertApi() {
     })
     .then(function (data) {
       console.log(data);
-      for (let i = 0; i < 9; i++) {
+      for (let i = 0; i < 12; i++) {
         // Create the parent div element
         let parentDiv = document.createElement("div");
         parentDiv.classList.add("tile", "is-parent");
@@ -129,7 +129,8 @@ function getConcertApi() {
           "sv-icon",
           "ml-2",
           "fa-solid",
-          "fa-cloud-arrow-down"
+          "fa-cloud-arrow-down",
+          
         );
         btn1.appendChild(btn1Icon);
 
@@ -141,10 +142,11 @@ function getConcertApi() {
         let ticketIcon = document.createElement("i");
         ticketIcon.classList.add(
           "tkt",
-          "mr-2",
+          "ml-2",
           "fa-solid",
           "fa-ticket",
-          "fa-rotate-by"
+          "fa-rotate-by",
+          
         );
         ticketIcon.style.setProperty("--fa-rotate-angle", "-35deg");
         ticket.appendChild(ticketIcon);
@@ -238,6 +240,15 @@ $(document).on("click", ".save-btn", function () {
 function renderSearch() {
   savedList.textContent = "";
   let savedSearches = JSON.parse(localStorage.getItem("concert-search"));
+ 
+  //Added if/else to hide the My Saved Searches box if no concerts are saved, and to display box when a concert is saved, and will display on page load if a concert is saved
+  if (savedSearches === null) {
+    hideBox.style.display = "none"
+  }
+  else {
+    hideBox.style.display = "block"
+  }
+    
   let uniqueData = [...new Set(savedSearches)];
   for (let index = 0; index < uniqueData.length; index++) {
     let concertInfo = document.createElement("li");

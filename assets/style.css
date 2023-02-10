@@ -18,7 +18,11 @@ body {
 .lined-up {
   display: flex;
   justify-content: space-between;
+  
 }
+
+
+
 .card-clr {
   background: linear-gradient(to top, white, #00d1b2);
 }
@@ -31,6 +35,7 @@ body {
     padding: 5px;
     display: flex;
     justify-content: space-around;
+    
 }
 
 .ticket {
@@ -209,8 +214,6 @@ flex-basis: content;
 @media screen and (max-width: 612px) {
   .button {
     min-width:80vw;
-    /* margin-left: auto;
-    margin-right: auto; */
   }
 
 }
