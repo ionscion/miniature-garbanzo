@@ -8,16 +8,14 @@ let cityInputElem = document.getElementById("city-input");
 let selectedStateElem = document.getElementById("state-input");
 let savedList = document.getElementById("saved-list");
 let deleteBtn = document.querySelector(".dlt");
-// let saveButton = $(".save-btn");
+let userChoice = document.getElementById("display-input");
 let failure = document.getElementById("failure");
 let section = document.getElementById("real-section");
-// let ancest = document.getElementById("ancestor-Id");
 let hideBox = document.getElementById("hide-box");
+
 let weatherapi = "326e6d35f7ebe093972477e3b80624aa";
 let seatgeekapi = "MzE3NDAyMDR8MTY3NTM1NDU3My4xNzIzODQ";
 let ipGeo = "38673022df5a4cfdbd8d9da66bf8a214";
-
-//make city and state mandatory
 
 function getCityApi(evt) {
   evt.preventDefault();
@@ -29,6 +27,8 @@ function getCityApi(evt) {
   if (cityInput === "New York" || cityInput === "new york") {
     cityInput = "City of New York";
   }
+
+  //add failure message here if city or state are not selected together because the fetch will fail before the message below happens
 
   let cityUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityInput},${selectedState},US&limit=1&appid=${weatherapi}`;
 
@@ -67,16 +67,22 @@ function getCityApi(evt) {
 // Pulling artist, venue, address and date from SeatGeek API and directions to venue
 //Added per_page into URL to bring back 25 results
 function getConcertApi() {
-  // section.classList.remove("hidden");
+  let selectedOutput = userChoice.value;
+  let output = 12;
   clearPage();
-  let seatGeekUrl = `https://api.seatgeek.com/2/events?lat=${latitude}&lon=${longitude}&per_page=25&range=5mi&taxonomies.name=concert&client_id=${seatgeekapi}`;
+
+  if(selectedOutput !== "Number of Results") {
+    output = selectedOutput;
+  } 
+
+  let seatGeekUrl = `https://api.seatgeek.com/2/events?lat=${latitude}&lon=${longitude}&per_page=${output}&range=5mi&taxonomies.name=concert&client_id=${seatgeekapi}`;
   fetch(seatGeekUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       console.log(data);
-      for (let i = 0; i < 12; i++) {
+      for (let i = 0; i < output; i++) {
         // Create the parent div element
         let parentDiv = document.createElement("div");
         parentDiv.classList.add("tile", "is-parent");
@@ -219,7 +225,8 @@ function clearPage() {
 //Clears the search
 function clearSearch() {
   cityInputElem.value = "";
-  selectedStateElem.value = "";
+  selectedStateElem.value = "State";
+  userChoice.value = "Number of Results";
 }
 
 $(document).on("click", ".save-btn", function () {
