@@ -181,6 +181,11 @@ flex-basis: content;
   display: none;
 }
 
+#real-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @media screen and (max-width: 395px) {
   .center,
   .label,
