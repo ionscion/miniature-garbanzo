@@ -77,10 +77,6 @@ function getConcertApi() {
     .then(function (data) {
       console.log(data);
       for (let i = 0; i < 9; i++) {
-        // let performer = document.getElementById("column-" + [i]);
-        // let showVenue = document.getElementById("venue-" + [i]);
-        // let showAddress = document.getElementById("address-" + [i]);
-        // let showDate = document.getElementById("time-" + [i]);
         // Create the parent div element
         let parentDiv = document.createElement("div");
         parentDiv.classList.add("tile", "is-parent");
@@ -106,10 +102,10 @@ function getConcertApi() {
         directLink.classList.add("direct-link", "mg-top");
         directLink.id = `address-${i}`;
         directLink.innerHTML =
-        '<i class="fa-solid fa-location-dot" aria-hidden="true"> </i> ';
-      directLink.append(
-        data.events[i].venue.address + " " + data.events[i].venue.postal_code
-      );
+          '<i class="fa-solid fa-location-dot" aria-hidden="true"> </i> ';
+        directLink.append(
+          data.events[i].venue.address + " " + data.events[i].venue.postal_code
+        );
 
         // Create the time element and set its id
         let time = document.createElement("p");
@@ -166,19 +162,9 @@ function getConcertApi() {
 
         parentDiv.appendChild(childArticle);
 
-                  // Append the parent div to the appropriate location in the HTML
+        // Append the parent div to the appropriate location in the HTML
         section.appendChild(parentDiv);
 
-        // showDate.innerText = dayjs(data.events[i].datetime_local).format(
-        //   "dddd, MMM D, YYYY h:mmA"
-        // );
-        // performer.innerText = data.events[i].short_title;
-        // showVenue.innerText = data.events[i].venue.name;
-        // showAddress.innerHTML =
-        //   '<i class="fa-solid fa-location-dot" aria-hidden="true"> </i> ';
-        // showAddress.append(
-        //   data.events[i].venue.address + " " + data.events[i].venue.postal_code
-        // );
         document
           .getElementById("address-" + [i])
           .addEventListener("click", function googleMap() {
@@ -196,7 +182,6 @@ function getConcertApi() {
             let ticketLink = data.events[i].url;
             window.open(ticketLink, "_blank");
           });
-       
       }
     });
 
@@ -235,25 +220,7 @@ function clearSearch() {
   selectedStateElem.value = "";
 }
 
-//Saving the concert by clicking on the specific tile
-// $(function () {
-//   saveButton.on("click", function () {
-//     let clickedSaveButton = $(this);
-//     let title = clickedSaveButton.closest(".control").siblings(".title").text();
-//     let subtitle = clickedSaveButton
-//       .closest(".control")
-//       .siblings(".subtitle")
-//       .text();
-//     let time = clickedSaveButton.closest(".control").siblings(".time").text();
-//     let concertSearch =
-//       JSON.parse(localStorage.getItem("concert-search")) || [];
-//     concertSearch.push(`${title}, ${subtitle}, ${time}`);
-//     localStorage.setItem("concert-search", JSON.stringify(concertSearch));
-//     renderSearch();
-//   });
-// });
-
-$(document).on("click", ".save-btn", function() {
+$(document).on("click", ".save-btn", function () {
   let clickedSaveButton = $(this);
   let title = clickedSaveButton.closest(".control").siblings(".title").text();
   let subtitle = clickedSaveButton
@@ -261,13 +228,11 @@ $(document).on("click", ".save-btn", function() {
     .siblings(".subtitle")
     .text();
   let time = clickedSaveButton.closest(".control").siblings(".time").text();
-  let concertSearch =
-    JSON.parse(localStorage.getItem("concert-search")) || [];
+  let concertSearch = JSON.parse(localStorage.getItem("concert-search")) || [];
   concertSearch.push(`${title}, ${subtitle}, ${time}`);
   localStorage.setItem("concert-search", JSON.stringify(concertSearch));
   renderSearch();
 });
-
 
 //Display the saved concert below in the saved searches section
 function renderSearch() {
