@@ -18,10 +18,7 @@ body {
 .lined-up {
   display: flex;
   justify-content: space-between;
-  
 }
-
-
 
 .card-clr {
   background: linear-gradient(to top, white, #00d1b2);
@@ -31,17 +28,15 @@ body {
   margin-top: 44px;
 }
 
-.control{
-    padding: 5px;
-    display: flex;
-    justify-content: space-around;
-    
+.control {
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .ticket {
-    background: orange;
-    color: white;
-    
+  background: orange;
+  color: white;
 }
 
 .ticket:hover {
@@ -50,11 +45,11 @@ body {
 }
 
 .tkt {
-  color:rgba(236, 95, 13, 0.992)
+  color: rgba(236, 95, 13, 0.992);
 }
 
 .sv-icon {
-  color: #00d1b2
+  color: #00d1b2;
 }
 
 .crowd-pic {
@@ -79,7 +74,7 @@ body {
 
 .head-size {
   font-size: 55px;
-  
+
   font-weight: bolder;
 
   font-family: "Sonsie One", sans-serif, cursive;
@@ -167,16 +162,17 @@ body {
 }
 
 .city {
-flex-basis: content;
+  flex-basis: content;
 }
 
-.state {
+.state,
+.output {
   margin-left: 10px;
   margin-top: 0;
 }
 
 .label {
-  color:aquamarine;
+  color: aquamarine;
 }
 
 .titles {
@@ -199,23 +195,17 @@ flex-basis: content;
 }
 
 
-
 @media screen and (max-width: 805px) {
-
-  .drop, strong {
+  .drop,
+  strong {
     color: aliceblue;
-
   }
-
-
-
 }
 
 @media screen and (max-width: 612px) {
   .button {
-    min-width:80vw;
+    min-width: 80vw;
   }
-
 }
 
 @media screen and (max-width: 495px) {
@@ -231,6 +221,4 @@ flex-basis: content;
   .fixed-width {
     width: 300px;
   }
-
 }
-
