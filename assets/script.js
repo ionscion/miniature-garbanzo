@@ -45,6 +45,7 @@ function getCityApi(evt) {
         failureMessage.textContent =
           "No city and state combination was found. Please make sure a state has been selected and city spelling is correct.";
         failure.appendChild(failureMessage);
+        clearSearch();
       } else {
         for (let i = 0; i < data.length; i++) {
           const returnedName = data[i].name.toLowerCase();
@@ -61,7 +62,7 @@ function getCityApi(evt) {
     .catch(function (error) {
       console.error("There was a problem with the fetch operation:", error);
     });
-  clearSearch();
+  
 }
 
 // Pulling artist, venue, address and date from SeatGeek API and directions to venue
@@ -69,8 +70,6 @@ function getCityApi(evt) {
 function getConcertApi() {
   let selectedOutput = userChoice.value;
   let output = 12;
-  clearPage();
-
   if(selectedOutput !== "Number of Results") {
     output = selectedOutput;
   } 
@@ -192,7 +191,8 @@ function getConcertApi() {
           });
       }
     });
-
+    clearPage();
+    clearSearch();
   latitude = [];
   longitude = [];
 }
@@ -226,7 +226,6 @@ function clearPage() {
 function clearSearch() {
   cityInputElem.value = "";
   selectedStateElem.value = "State";
-  userChoice.value = "Number of Results";
 }
 
 $(document).on("click", ".save-btn", function () {
