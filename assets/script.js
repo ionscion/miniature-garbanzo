@@ -38,7 +38,6 @@ function getCityApi(evt) {
     })
     .then(function (data) {
       if (data.length === 0) {
-        console.log("no city was found!");
         // Display the failure message
         failure.classList.remove("hidden");
         let failureMessage = document.createElement("p");
@@ -50,10 +49,8 @@ function getCityApi(evt) {
         for (let i = 0; i < data.length; i++) {
           const returnedName = data[i].name.toLowerCase();
           if (cityInput.toLowerCase().includes(returnedName)) {
-            console.log("city matches exactly");
             latitude.push(data[0].lat);
             longitude.push(data[0].lon);
-            console.log(`${latitude},${longitude}`);
           }
         }
         getConcertApi(latitude, longitude);
@@ -62,7 +59,6 @@ function getCityApi(evt) {
     .catch(function (error) {
       console.error("There was a problem with the fetch operation:", error);
     });
-  
 }
 
 // Pulling artist, venue, address and date from SeatGeek API and directions to venue
@@ -70,9 +66,9 @@ function getCityApi(evt) {
 function getConcertApi() {
   let selectedOutput = userChoice.value;
   let output = 12;
-  if(selectedOutput !== "Number of Results") {
+  if (selectedOutput !== "Number of Results") {
     output = selectedOutput;
-  } 
+  }
 
   let seatGeekUrl = `https://api.seatgeek.com/2/events?lat=${latitude}&lon=${longitude}&per_page=${output}&range=5mi&taxonomies.name=concert&client_id=${seatgeekapi}`;
   fetch(seatGeekUrl)
@@ -80,16 +76,13 @@ function getConcertApi() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       for (let i = 0; i < output; i++) {
-
         let concertTitle = data.events[i].short_title;
         let concertVenue = data.events[i].venue.name;
-        let concertAddress = data.events[i].venue.address + " " + data.events[i].venue.postal_code;
+        let concertAddress = data.events[i].venue.address;
         let concertTime = dayjs(data.events[i].datetime_local).format(
-          "dddd, MMM D, YYYY h:mmA");
-        
-      
+          "dddd, MMM D, YYYY h:mmA"
+        );
 
         let card = $(`
         
@@ -122,12 +115,10 @@ function getConcertApi() {
             </button>
           </div>
         </article>
-        </div>`
-      )
- 
-  // Append the parent div to the appropriate location in the HTML
+        </div>`);
+
+        // Append the parent div to the appropriate location in the HTML
         $(section).append(card);
-       
 
         document
           .getElementById("address-" + [i])
@@ -148,8 +139,8 @@ function getConcertApi() {
           });
       }
     });
-    clearPage();
-    clearSearch();
+  clearPage();
+  clearSearch();
   latitude = [];
   longitude = [];
 }
@@ -164,8 +155,6 @@ function getCurrentIpApi() {
       return response.json();
     })
     .then(function (data) {
-      console.log("ip data below");
-      console.log(data);
       latitude.push(data.latitude);
       longitude.push(data.longitude);
       getConcertApi(latitude, longitude);
@@ -194,7 +183,7 @@ $(document).on("click", ".save-btn", function () {
     .text();
   let time = clickedSaveButton.closest(".control").siblings(".time").text();
   let concertSearch = JSON.parse(localStorage.getItem("concert-search")) || [];
-  concertSearch.push(`${title}, ${subtitle}, ${time}`);
+  concertSearch.push(`${title} at ${subtitle} ${time}`);
   localStorage.setItem("concert-search", JSON.stringify(concertSearch));
   renderSearch();
 });
@@ -203,15 +192,14 @@ $(document).on("click", ".save-btn", function () {
 function renderSearch() {
   savedList.textContent = "";
   let savedSearches = JSON.parse(localStorage.getItem("concert-search"));
- 
+
   //Added if/else to hide the My Saved Searches box if no concerts are saved, and to display box when a concert is saved, and will display on page load if a concert is saved
   if (savedSearches === null) {
-    hideBox.style.display = "none"
+    hideBox.style.display = "none";
+  } else {
+    hideBox.style.display = "block";
   }
-  else {
-    hideBox.style.display = "block"
-  }
-    
+
   let uniqueData = [...new Set(savedSearches)];
   for (let index = 0; index < uniqueData.length; index++) {
     let concertInfo = document.createElement("li");
