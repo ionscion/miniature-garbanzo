@@ -82,95 +82,52 @@ function getConcertApi() {
     .then(function (data) {
       console.log(data);
       for (let i = 0; i < output; i++) {
-        // Create the parent div element
-        let parentDiv = document.createElement("div");
-        parentDiv.classList.add("tile", "is-parent");
 
-        // Create the child article element
-        let childArticle = document.createElement("article");
-        childArticle.classList.add("tile", "is-child", "box", "card-clr");
+        let concertTitle = data.events[i].short_title;
+        let concertVenue = data.events[i].venue.name;
+        let concertAddress = data.events[i].venue.address + " " + data.events[i].venue.postal_code;
+        let concertTime = dayjs(data.events[i].datetime_local).format(
+          "dddd, MMM D, YYYY h:mmA");
+        
+      
 
-        // Create the title element and set its id
-        let title = document.createElement("p");
-        title.classList.add("title");
-        title.id = `column-${i}`;
-        title.textContent = data.events[i].short_title;
-
-        // Create the subtitle element and set its id
-        let subtitle = document.createElement("p");
-        subtitle.classList.add("subtitle");
-        subtitle.id = `venue-${i}`;
-        subtitle.textContent = data.events[i].venue.name;
-
-        // Create the direct-link button element and set its id
-        let directLink = document.createElement("button");
-        directLink.classList.add("direct-link", "mg-top");
-        directLink.id = `address-${i}`;
-        directLink.innerHTML =
-          '<i class="fa-solid fa-location-dot" aria-hidden="true"> </i> ';
-        directLink.append(
-          data.events[i].venue.address + " " + data.events[i].venue.postal_code
-        );
-
-        // Create the time element and set its id
-        let time = document.createElement("p");
-        time.classList.add("time");
-        time.id = `time-${i}`;
-        time.textContent = dayjs(data.events[i].datetime_local).format(
-          "dddd, MMM D, YYYY h:mmA"
-        );
-
-        // Create the control div element
-        let control = document.createElement("div");
-        control.classList.add("control");
-
-        // Create the first button element and set its id and class
-        let btn1 = document.createElement("button");
-        btn1.id = `button-${i}`;
-        btn1.classList.add("save-btn", "button", "is-primary", "artist-btn");
-        btn1.textContent = "Save";
-        let btn1Icon = document.createElement("i");
-        btn1Icon.classList.add(
-          "sv-icon",
-          "ml-2",
-          "fa-solid",
-          "fa-cloud-arrow-down",
-          
-        );
-        btn1.appendChild(btn1Icon);
-
-        // Create the second button element and set its id and class
-        let ticket = document.createElement("button");
-        ticket.id = `ticket-${i}`;
-        ticket.classList.add("ticket", "button");
-        ticket.textContent = "Tickets";
-        let ticketIcon = document.createElement("i");
-        ticketIcon.classList.add(
-          "tkt",
-          "ml-2",
-          "fa-solid",
-          "fa-ticket",
-          "fa-rotate-by",
-          
-        );
-        ticketIcon.style.setProperty("--fa-rotate-angle", "-35deg");
-        ticket.appendChild(ticketIcon);
-
-        // Append the buttons to the control div
-        control.appendChild(btn1);
-        control.appendChild(ticket);
-
-        // Append the elements to their parent elements
-        childArticle.appendChild(title);
-        childArticle.appendChild(subtitle);
-        childArticle.appendChild(directLink);
-        childArticle.appendChild(time);
-        childArticle.appendChild(control);
-
-        parentDiv.appendChild(childArticle);
-
-        // Append the parent div to the appropriate location in the HTML
-        section.appendChild(parentDiv);
+        let card = $(`
+        
+        <div class="tile is-parent">
+        <article class="tile is-child box card-clr">
+          <p class="title" id="column-${i}">${concertTitle}</p>
+          <p class="subtitle" id="venue-${i}">
+            ${concertVenue} <br> ${concertTime}
+          </p>
+          <br>
+          <button class="address direct-link mg-top" id="address-${i}">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"> ${concertAddress} </i>
+          </button> 
+          <p class="time" id="time-${i}"></p>
+          <div class="control">
+            <button
+              id="btn-${i}"
+              class="save-btn button is-primary artist-btn"
+            >
+              Save<i
+                class="sv-icon ml-2 fa-solid fa-cloud-arrow-down"
+              ></i>
+            </button>
+            <button id="ticket-${i}" class="ticket button">
+              <i
+                class="tkt mr-2 fa-solid fa-ticket fa-rotate-by"
+                style="--fa-rotate-angle: -35deg"
+              ></i
+              >Tickets
+            </button>
+          </div>
+        </article>
+        </div>`
+      )
+ 
+  // Append the parent div to the appropriate location in the HTML
+        $(section).append(card);
+       
 
         document
           .getElementById("address-" + [i])
