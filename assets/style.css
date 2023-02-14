@@ -22,6 +22,9 @@ body {
 
 .card-clr {
   background: linear-gradient(to top, white, #00d1b2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .select {
@@ -32,6 +35,14 @@ body {
   padding: 5px;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+.address {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .ticket {
@@ -96,14 +107,6 @@ body {
 .artist-btn:hover {
   box-shadow: 5px 10px gray;
 }
-
-/* .address{
-    font: Arial;
-    text-transform: lowercase;
-    border: 1px red;
-    padding: 5px;
-    margin-top: 5px;
-} */
 
 .center-btns {
   display: flex;
@@ -202,7 +205,6 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-
 
 @media screen and (max-width: 805px) {
   .drop,
