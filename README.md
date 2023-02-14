@@ -1,3 +1,5 @@
+# Concert Connection: A site for searching for live music on the go!
+
 <h1 align="center">
 Concert Connection
 </h1>
