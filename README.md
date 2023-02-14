@@ -1,3 +1,5 @@
+# Concert Connection: A site for searching for live music on the go!
+
 <h1 align="center">
 Concert Connection
 </h1>
@@ -52,7 +54,8 @@ This is the header of our overall description.
 
 # Images
 
-![Website Screen Shots](./assets/images/Webpage.png)
+![Website Screen Shots](./assets/images/Webpage%202.png)
+![Website Screen Shots](./assets/images/Save%20Searches.png)
 
 # Description
 
@@ -84,7 +87,9 @@ https://api.ipgeolocation.io/
 
 <p>&nbsp;</p>
 
-https://github.com/ionscion/miniature-garbanzo
+GitHub: https://github.com/ionscion/miniature-garbanzo
+
+URL: https://ionscion.github.io/miniature-garbanzo/
 
 <p>&nbsp;</p>
 
