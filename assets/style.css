@@ -97,6 +97,14 @@ body {
   box-shadow: 5px 10px gray;
 }
 
+/* .address{
+    font: Arial;
+    text-transform: lowercase;
+    border: 1px red;
+    padding: 5px;
+    margin-top: 5px;
+} */
+
 .center-btns {
   display: flex;
   justify-content: center;
@@ -131,6 +139,7 @@ body {
   margin-left: -5px;
   font-size: 15px;
   margin-top: -20px !important;
+  font: arial;
 }
 
 .blue-show {
